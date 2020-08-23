@@ -30,7 +30,7 @@ class Tetromino {
       return tetrominoType;
     };
 
-    void setShapeType(TetrominoType newTetrominoType) {
+    void setTetrominoType(TetrominoType newTetrominoType) {
       tetrominoType = newTetrominoType;    
       setTetrominoDimensions();
     };
