@@ -34,4 +34,8 @@ class TetrominoHelper {
         int getRandomInt() {
             return rand() % (6 + 1);
         }
+
+        int getStartXCoord() {
+            return rand() % (10 + 1);
+        }
 };

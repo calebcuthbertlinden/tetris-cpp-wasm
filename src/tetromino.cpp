@@ -16,6 +16,8 @@ class Tetromino {
     int width = 0;
     TetrominoType tetrominoType;
     string readableName;
+    int xCoord = 0;
+    int yCoord = 0;
 
   public:
     int getHeight() {
@@ -26,6 +28,14 @@ class Tetromino {
       return width;
     };
 
+    int getXCoord() {
+      return xCoord;
+    };
+
+    int getYCoord() {
+      return yCoord;
+    };
+
     int getTetrominoType() {
       return tetrominoType;
     };
@@ -34,6 +44,17 @@ class Tetromino {
       tetrominoType = newTetrominoType;    
       setTetrominoDimensions();
     };
+
+    void setStartLocation(int newXCoord, int newYCoord) {
+      xCoord = newXCoord;
+      yCoord = newYCoord;
+    };
+
+    void updateLocation(int xCoordDif, int yCoordDif) {
+      xCoord = xCoord + xCoordDif;
+      yCoord = yCoord + yCoordDif;
+      cout << xCoord << " " << yCoord << "\n";
+    }
 
     void setTetrominoDimensions() {
         switch(tetrominoType) {
@@ -78,7 +99,7 @@ class Tetromino {
     }
 
     void printTetrominoDetails(bool tetromino[][3]) {
-      cout << "The type is: " << readableName << "\n";
+      cout << "\nThe type is: " << readableName << "\n";
       for (int row = 0; row < height; row++) {
           for (int collumn = 0; collumn < width; collumn++) {
               cout << tetromino[row][collumn];
